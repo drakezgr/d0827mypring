@@ -3,13 +3,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                                 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.ekgc.usm</groupId>
 	<artifactId>usm</artifactId>
 	<version>1.0</version>
+	<!-- 项目打包 -->
+	<packaging>jar</packaging>
 
+	<!-- 配置继承与父类Spring Boot Starter parent -->
 	<parent>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<groupId>org.springframework.boot</groupId>
@@ -19,16 +22,59 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<Spring-Boot-Starter-MyBatis>2.1.3</Spring-Boot-Starter-MyBatis>
+		<Druid-Spring-Boot-Starter>1.1.23</Druid-Spring-Boot-Starter>
+		<pagehelper-spring-boot-starter>1.3.0</pagehelper-spring-boot-starter>
 	</properties>
 
 	<dependencies>
 
+		<!-- 配置Spring Boot Starer Web依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<!-- 配置Mysql Connector依赖 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!-- 配置Spring Boot Starter MyBatis依赖 -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>${Spring-Boot-Starter-MyBatis}</version>
+		</dependency>
+
+		<!-- 配置Druid Spring Boot Starter 依赖 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>${Druid-Spring-Boot-Starter}</version>
+		</dependency>
+
+
+		<!-- 配置PageHelper Spring Boot Starter 依赖 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>${pagehelper-spring-boot-starter}</version>
+		</dependency>
+
+		<!-- 为了转发到页面，使用Spring Boot Starter自带的插件 Thymeleaf  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+
+
+
+
 
 		<dependency>
 			<groupId>junit</groupId>
